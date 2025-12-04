@@ -7,6 +7,8 @@ export function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,10 +102,12 @@ export function Login() {
             <div className="form-group">
               <label>Email Address</label>
               <div className="input-with-icon">
-                <Mail size={18} />
-                <input 
-                  type="email" 
+                <Mail size={18} className={emailValue ? 'hidden' : ''} />
+                <input
+                  type="email"
                   placeholder="you@company.com"
+                  value={emailValue}
+                  onChange={(e) => setEmailValue(e.target.value)}
                   required
                 />
               </div>
@@ -112,10 +116,12 @@ export function Login() {
             <div className="form-group">
               <label>Password</label>
               <div className="input-with-icon">
-                <Lock size={18} />
-                <input 
+                <Lock size={18} className={passwordValue ? 'hidden' : ''} />
+                <input
                   type={showPassword ? 'text' : 'password'}
                   placeholder="••••••••"
+                  value={passwordValue}
+                  onChange={(e) => setPasswordValue(e.target.value)}
                   required
                 />
                 <button 

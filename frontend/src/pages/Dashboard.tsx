@@ -96,10 +96,15 @@ export function Dashboard() {
   if (loading) {
     return (
       <div className="page-container">
-        <Header title="ESG Dashboard" subtitle="Loading your sustainability data..." />
         <div className="loading-state">
-          <RefreshCw className="spin" size={32} />
-          <p>Loading ESG data from Firebase...</p>
+          <RefreshCw className="spin" size={48} />
+          <h2>GreenAlgebra ESG Dashboard</h2>
+          <p>Loading your sustainability data...</p>
+          <div className="loading-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     );
@@ -108,13 +113,13 @@ export function Dashboard() {
   if (error || !report) {
     return (
       <div className="page-container">
-        <Header title="ESG Dashboard" />
         <div className="error-state">
-          <AlertCircle size={48} />
-          <h3>Failed to load dashboard</h3>
-          <p>{error}</p>
-          <button className="btn btn-primary" onClick={loadReport}>
-            <RefreshCw size={16} /> Retry
+          <AlertCircle size={64} />
+          <h2>GreenAlgebra ESG Dashboard</h2>
+          <p>Unable to load your sustainability data</p>
+          <p className="error-details">{error || 'Please check your connection and try again'}</p>
+          <button className="btn btn-primary btn-lg" onClick={loadReport}>
+            <RefreshCw size={18} /> Try Again
           </button>
         </div>
       </div>
