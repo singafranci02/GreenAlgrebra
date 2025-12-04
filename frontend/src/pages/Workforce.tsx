@@ -4,7 +4,7 @@ import {
   RefreshCw, TrendingUp, AlertCircle,
   GraduationCap, Shield, DollarSign
 } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 interface WorkforceEntry {
   id: string;

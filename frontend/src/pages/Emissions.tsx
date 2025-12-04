@@ -3,6 +3,7 @@ import {
   Cloud, Plus, Trash2, Save, Calculator, Info,
   Factory, Car, Building2, RefreshCw
 } from 'lucide-react';
+import { API_BASE } from '../config/api';
 
 interface EmissionEntry {
   id: string;
