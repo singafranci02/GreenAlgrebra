@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
   Zap,
@@ -14,7 +14,6 @@ import {
   Sun,
   ChevronLeft,
   ChevronRight,
-  Building2,
   Link2,
   TrendingUp,
 } from 'lucide-react';
@@ -35,7 +34,6 @@ const navItems = [
 
 export function Sidebar() {
   const { theme, toggleTheme } = useTheme();
-  const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
 
   return (

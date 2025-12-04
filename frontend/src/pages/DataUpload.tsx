@@ -83,7 +83,7 @@ export function DataUpload() {
 
       try {
         // Call API
-        const result = await api.uploadInvoice(file);
+        await api.uploadInvoice(file);
         
         // Simulate AI extraction results
         await new Promise(r => setTimeout(r, 1500));

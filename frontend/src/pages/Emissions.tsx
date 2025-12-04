@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
   Cloud, Plus, Trash2, Save, Calculator, Info,
-  Factory, Car, Plane, Building2, RefreshCw
+  Factory, Car, Building2, RefreshCw
 } from 'lucide-react';
 
 interface EmissionEntry {
@@ -175,24 +175,6 @@ export function Emissions() {
   const filteredEntries = selectedScope === 'all' 
     ? entries 
     : entries.filter(e => e.scope === selectedScope || (selectedScope === 'scope_2' && e.scope.startsWith('scope_2')));
-
-  const getScopeLabel = (scope: string) => {
-    switch (scope) {
-      case 'scope_1': return 'Scope 1';
-      case 'scope_2_location': return 'Scope 2 (Location)';
-      case 'scope_2_market': return 'Scope 2 (Market)';
-      default: return scope;
-    }
-  };
-
-  const getScopeColor = (scope: string) => {
-    switch (scope) {
-      case 'scope_1': return 'scope-1';
-      case 'scope_2_location': 
-      case 'scope_2_market': return 'scope-2';
-      default: return '';
-    }
-  };
 
   return (
     <div className="page-container data-entry-page">

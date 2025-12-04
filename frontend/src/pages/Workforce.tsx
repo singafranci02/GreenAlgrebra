@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import {
-  Users, Plus, Trash2, Save, Calculator, Info,
-  RefreshCw, TrendingUp, AlertCircle, CheckCircle,
-  GraduationCap, Shield, DollarSign, Globe
+  Users, Plus, Trash2, Save, Info,
+  RefreshCw, TrendingUp, AlertCircle,
+  GraduationCap, Shield, DollarSign
 } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 interface WorkforceEntry {
   id: string;
@@ -29,8 +29,6 @@ interface WorkforceEntry {
   lost_days: number;
   notes: string;
 }
-
-import { API_BASE } from '../config/api';
 
 export function Workforce() {
   const [entries, setEntries] = useState<WorkforceEntry[]>([
@@ -187,7 +185,6 @@ export function Workforce() {
     female_pct: e.total_headcount > 0 ? (e.female / e.total_headcount) * 100 : 0,
   }));
 
-  const COLORS = ['#3b82f6', '#ec4899', '#8b5cf6', '#22c55e', '#f59e0b'];
 
   return (
     <div className="page-container data-entry-page workforce-page">
@@ -280,7 +277,7 @@ export function Workforce() {
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(1)}%`}
+                  label={({ name, percent }) => `${name}: ${percent ? (percent * 100).toFixed(1) : 0}%`}
                   outerRadius={80}
                   fill="#8884d8"
                   dataKey="value"

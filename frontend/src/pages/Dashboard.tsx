@@ -25,7 +25,6 @@ import {
   Cell,
   BarChart,
   Bar,
-  Legend,
 } from 'recharts';
 import { Header } from '../components/Header';
 import { api } from '../api';
@@ -142,10 +141,6 @@ export function Dashboard() {
     { name: 'Scope 3', value: scope3Total, color: '#3b82f6' },
   ];
 
-  const energyData = [
-    { name: 'Renewable', value: renewableEnergy, color: '#22c55e' },
-    { name: 'Non-Renewable', value: totalEnergy - renewableEnergy, color: '#94a3b8' },
-  ];
 
   const monthlyTrend = [
     { month: 'Jan', emissions: 12.5, energy: 2200 },

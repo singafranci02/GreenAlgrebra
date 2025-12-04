@@ -4,7 +4,7 @@ import {
   ShoppingCart, Building2, Plane, Truck, Package,
   Users, RefreshCw, DollarSign, ChevronDown, ChevronUp
 } from 'lucide-react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 interface Scope3Entry {
   id: string;

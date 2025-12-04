@@ -254,9 +254,6 @@ export function Energy() {
         </div>
 
         {entries.map(entry => {
-          const sourceConfig = ENERGY_SOURCES.find(s => s.value === entry.source);
-          const SourceIcon = sourceConfig?.icon || Zap;
-          
           return (
             <div key={entry.id} className="table-row">
               <div className="cell">

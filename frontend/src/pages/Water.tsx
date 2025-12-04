@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import {
-  Droplets, Plus, Trash2, Save, Calculator, Info,
-  RefreshCw, TrendingUp, AlertCircle, CheckCircle,
-  Activity, BarChart3
+  Droplets, Plus, Trash2, Save, Info,
+  RefreshCw, TrendingUp, AlertCircle,
+  Activity
 } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 interface WaterEntry {
   id: string;
@@ -38,8 +38,6 @@ const WATER_STRESSED_REGIONS = [
   'Northern China',
   'Australia',
 ];
-
-import { API_BASE } from '../config/api';
 
 export function Water() {
   const [entries, setEntries] = useState<WaterEntry[]>([
@@ -161,8 +159,6 @@ export function Water() {
     value: Math.round(value)
   }));
 
-  const COLORS = ['#3b82f6', '#22c55e', '#06b6d4', '#8b5cf6', '#f59e0b', '#ef4444'];
-
   return (
     <div className="page-container data-entry-page water-page">
       <div className="page-header">
@@ -282,9 +278,6 @@ export function Water() {
         </div>
 
         {entries.map(entry => {
-          const sourceConfig = WATER_SOURCES.find(s => s.value === entry.source_type);
-          const consumption = entry.withdrawal - entry.discharge;
-          
           return (
             <div key={entry.id} className="table-row">
               <div className="cell">
