@@ -40,8 +40,6 @@ const SCOPE_2_CATEGORIES = [
   ]},
 ];
 
-import { API_BASE } from '../config/api';
-
 export function Emissions() {
   const [entries, setEntries] = useState<EmissionEntry[]>([
     {
