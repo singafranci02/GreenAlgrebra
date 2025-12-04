@@ -120,6 +120,7 @@ a:hover {
   flex: 1;
   margin-left: var(--sidebar-width);
   min-height: 100vh;
+  width: calc(100vw - var(--sidebar-width));
   transition: margin-left 0.3s ease;
 }
 
@@ -897,10 +898,22 @@ a:hover {
   position: absolute;
   left: 14px;
   color: var(--text-tertiary);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .input-with-icon input {
   padding-left: 42px;
+}
+
+.input-with-icon input:focus + svg,
+.input-with-icon input:not(:placeholder-shown) + svg {
+  opacity: 0;
+}
+
+.input-with-icon:has(input:focus) svg,
+.input-with-icon:has(input:not(:placeholder-shown)) svg {
+  opacity: 0;
 }
 
 .password-toggle {

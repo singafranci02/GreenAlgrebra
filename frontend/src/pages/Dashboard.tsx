@@ -75,7 +75,10 @@ export function Dashboard() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    loadReport();
+    const timer = setTimeout(() => {
+      loadReport();
+    }, 1000); // Small delay to ensure backend is ready
+    return () => clearTimeout(timer);
   }, []);
 
   const loadReport = async () => {
